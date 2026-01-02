@@ -1,5 +1,6 @@
 import { motion, type Variants } from 'framer-motion';
 import { Search, Lightbulb, PenTool, Code2, Rocket, Heart } from 'lucide-react';
+import { cloneElement, isValidElement } from 'react';
 
 const Process = () => {
     const steps = [
@@ -118,8 +119,10 @@ const Process = () => {
                                         alt={step.title}
                                         className="w-full h-full object-cover"
                                     />
-                                    <div className={`absolute top-4 right-4 bg-white/90 dark:bg-slate-900/90 p-2 rounded-xl backdrop-blur-sm shadow-sm ${step.textColor}`}>
-                                        {step.icon}
+                                    <div className="absolute top-4 right-4 bg-white/90 dark:bg-slate-900/90 p-2 rounded-xl backdrop-blur-sm shadow-sm">
+                                        {isValidElement(step.icon) && cloneElement(step.icon as React.ReactElement<any>, {
+                                            className: `w-8 h-8 ${step.textColor}`
+                                        })}
                                     </div>
                                 </div>
 
