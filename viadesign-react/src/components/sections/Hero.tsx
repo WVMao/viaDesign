@@ -157,7 +157,7 @@ const Hero = () => {
                                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
                                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] aspect-[4/5] bg-gradient-to-br from-white/10 to-white/5 dark:from-white/5 dark:to-transparent backdrop-blur-2xl rounded-3xl border border-white/20 shadow-2xl z-20 flex items-center justify-center overflow-hidden group"
                             >
-                                <div className="absolute inset-0 bg-blue-500/10 mix-blend-overlay z-10" />
+                                <div className="absolute inset-0 bg-green-500/20 mix-blend-color z-10" />
                                 <img
                                     src="assets/hero-portrait.png"
                                     alt="Portrait ViaDesign"
