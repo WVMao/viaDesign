@@ -7,17 +7,22 @@ const Hero = () => {
     const fullText = "Donnez vie à vos ambitions avec un design\nqui marque les esprits et booste vos résultats.";
 
     useEffect(() => {
-        let i = 0;
-        const typing = setInterval(() => {
-            if (i < fullText.length) {
-                setText((prev) => prev + fullText.charAt(i));
-                i++;
-            } else {
-                clearInterval(typing);
-            }
-        }, 40);
+        const timeout = setTimeout(() => {
+            setText('');
+            let i = 0;
+            const typing = setInterval(() => {
+                if (i <= fullText.length) {
+                    setText(fullText.slice(0, i));
+                    i++;
+                } else {
+                    clearInterval(typing);
+                }
+            }, 40);
 
-        return () => clearInterval(typing);
+            return () => clearInterval(typing);
+        }, 100); // Petit délai pour éviter les conflits initiaux
+
+        return () => clearTimeout(timeout);
     }, []);
 
     const containerVariants: Variants = {
