@@ -38,17 +38,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                                 <Monitor size={24} className="text-white/20" />
                             </div>
                         </div>
-                        {/* iPhone-style mockup overlay */}
-                        <div className="absolute -bottom-2 -right-2 w-16 aspect-[9/19] bg-slate-900 rounded-2xl p-0.5 shadow-xl border-2 border-slate-700 hidden sm:block">
-                            <div className="absolute top-1 left-1/2 -translate-x-1/2 w-4 h-1 bg-slate-800 rounded-full"></div>
-                            <img
-                                src={project.image}
-                                alt={project.title}
-                                loading="lazy"
-                                decoding="async"
-                                className="w-full h-full object-cover rounded-[14px]"
-                            />
-                        </div>
+
                     </div>
                 ) : (
                     <div className="relative w-full h-full overflow-hidden bg-gray-50 dark:bg-slate-800 group">
