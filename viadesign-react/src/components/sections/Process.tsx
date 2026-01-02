@@ -8,6 +8,7 @@ const Process = () => {
             title: "01. Découverte",
             description: "Analyse approfondie de vos besoins, de vos objectifs et de votre cible pour poser les bases solides de votre projet.",
             iconStyles: "bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400",
+            textColor: "text-blue-600 dark:text-blue-400",
             image: "assets/process-step-1.png"
         },
         {
@@ -15,6 +16,7 @@ const Process = () => {
             title: "02. Stratégie",
             description: "Élaboration d'un concept unique, création de moodboards et définition de la direction artistique.",
             iconStyles: "bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400",
+            textColor: "text-purple-600 dark:text-purple-400",
             image: "assets/process-step-2.png"
         },
         {
@@ -22,6 +24,7 @@ const Process = () => {
             title: "03. Design",
             description: "Donner vie aux idées à travers des visuels percutants ou des interfaces UI fluides et intuitives.",
             iconStyles: "bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400",
+            textColor: "text-pink-600 dark:text-pink-400",
             image: "assets/process-step-3.png"
         },
         {
@@ -29,6 +32,7 @@ const Process = () => {
             title: "04. Réalisation",
             description: "Développement technique rigoureux avec une attention particulière aux détails et aux performances.",
             iconStyles: "bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400",
+            textColor: "text-green-600 dark:text-green-400",
             image: "assets/process-step-4.png"
         },
         {
@@ -36,6 +40,7 @@ const Process = () => {
             title: "05. Lancement",
             description: "Mise en ligne, tests finaux et accompagnement pour assurer le succès de votre nouvelle identité.",
             iconStyles: "bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400",
+            textColor: "text-orange-600 dark:text-orange-400",
             image: "assets/process-step-5.png"
         }
     ];
@@ -113,7 +118,7 @@ const Process = () => {
                                         alt={step.title}
                                         className="w-full h-full object-cover"
                                     />
-                                    <div className="absolute top-4 right-4 bg-white/90 dark:bg-slate-900/90 p-2 rounded-xl backdrop-blur-sm shadow-sm">
+                                    <div className={`absolute top-4 right-4 bg-white/90 dark:bg-slate-900/90 p-2 rounded-xl backdrop-blur-sm shadow-sm ${step.textColor}`}>
                                         {step.icon}
                                     </div>
                                 </div>
