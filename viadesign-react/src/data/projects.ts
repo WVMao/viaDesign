@@ -75,42 +75,6 @@ export const graphicPortfolio: Project[] = [
         }
     },
     {
-        id: 202506,
-        category: 'vente',
-        title: 'Pressing ProClean',
-        description: 'Service de blanchisserie professionnelle',
-        image: 'assets/graphic-2025-6.jpg',
-        caseStudy: {
-            problem: "Le pressing ProClean souhaitait un visuel pour rassurer sur la qualité du traitement des textiles délicats.",
-            solution: "Utilisation d'un bleu aqua éclatant et de bulles stylisées pour évoquer la pureté et le soin professionnel.",
-            result: "Une communication efficace qui a positionné ProClean comme le service le plus méticuleux du quartier."
-        }
-    },
-    {
-        id: 202507,
-        category: 'cuisine',
-        title: 'Chez Vicky',
-        description: 'Promotion "Venez Manger" à petit prix',
-        image: 'assets/graphic-2025-7.jpg',
-        caseStudy: {
-            problem: "Lancer une promotion flash 'Venez Manger' avec un budget réduit mais un impact maximal.",
-            solution: "Titre imposant et photo généreuse du plat phare pour créer un désir immédiat chez le passant.",
-            result: "Affluence record pendant la période promotionnelle grâce à la clarté du message."
-        }
-    },
-    {
-        id: 202508,
-        category: 'evenement',
-        title: 'Vœux de Décembre',
-        description: 'Visuel festif pour la fin d\'année',
-        image: 'assets/graphic-2025-8.jpg',
-        caseStudy: {
-            problem: "Créer une carte de vœux originale pour remercier les partenaires en fin d'année.",
-            solution: "Design élégant avec textures festives et personnalisation du message pour humaniser la marque.",
-            result: "Renforcement des relations professionnelles et retours positifs des collaborateurs."
-        }
-    },
-    {
         id: 202509,
         category: 'cuisine',
         title: 'Fried Rice Belingua',
@@ -147,18 +111,6 @@ export const graphicPortfolio: Project[] = [
         }
     },
     {
-        id: 202512,
-        category: 'business',
-        title: 'Simplicité Design',
-        description: 'Communication d\'agence sur le style épuré',
-        image: 'assets/graphic-2025-12.jpg',
-        caseStudy: {
-            problem: "Démontrer que le design minimaliste peut être plus puissant que le design chargé.",
-            solution: "Une composition jouant sur le vide (white space) avec un point focal central très fort.",
-            result: "Reconnaissance de l'expertise de l'agence en design moderne et haut de gamme."
-        }
-    },
-    {
         id: 202513,
         category: 'sport',
         title: 'Fitness Élégane',
@@ -168,30 +120,6 @@ export const graphicPortfolio: Project[] = [
             problem: "Inspirer les femmes à se mettre au sport avec un visuel à la fois dynamique et esthétique.",
             solution: "Photographie d'action avec des contrastes élevés et une typographie dynamique type 'italique'.",
             result: "Forte identification de la cible féminine et engagement accru sur les réseaux de la marque."
-        }
-    },
-    {
-        id: 202514,
-        category: 'business',
-        title: 'Conseils Design',
-        description: 'Infographie : Les erreurs à éviter',
-        image: 'assets/graphic-2025-14.jpg',
-        caseStudy: {
-            problem: "Vulgariser des concepts de design complexes pour les néophytes en business.",
-            solution: "Utilisation d'un format 'Step-by-step' avec des visuels comparatifs (Do vs Don't).",
-            result: "Contenu éducatif très apprécié générant de nombreuses demandes de conseil en branding."
-        }
-    },
-    {
-        id: 202515,
-        category: 'business',
-        title: 'Synergie Business',
-        description: 'Marketing stratégique pour rentabilité',
-        image: 'assets/graphic-2025-15.png',
-        caseStudy: {
-            problem: "Expliquer visuellement comment différents services marketing travaillent ensemble pour le profit.",
-            solution: "Schéma conceptuel moderne utilisant des dégradés et des formes interconnectées fluides.",
-            result: "Succès commercial du service grâce à une explication visuelle qui a convaincu les investisseurs."
         }
     }
 ];
