@@ -38,7 +38,9 @@ const Hero = () => {
     };
 
     return (
-        <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-gradient-to-br from-blue-50 via-white to-green-50/30">
+        <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-gradient-to-br from-blue-50 via-white to-green-50/30 dark:from-slate-900 dark:via-slate-950 dark:to-emerald-950/20">
+            {/* Ndop-inspired subtle background pattern */}
+            <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l30 30-30 30L0 30z' fill='%23000' fill-rule='evenodd'/%3E%3C/svg%3E")`, backgroundSize: '40px 40px' }}></div>
             {/* Animated Background Shapes */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <motion.div
@@ -118,7 +120,7 @@ const Hero = () => {
 
                     <motion.h1
                         variants={itemVariants}
-                        className="text-5xl md:text-7xl font-outfit font-extrabold text-gray-900 leading-tight mb-6"
+                        className="text-5xl md:text-7xl font-outfit font-extrabold text-gray-900 dark:text-white leading-tight mb-6"
                     >
                         Design{' '}
                         <motion.span
@@ -136,7 +138,7 @@ const Hero = () => {
 
                     <motion.p
                         variants={itemVariants}
-                        className="text-xl md:text-2xl text-gray-600 mb-10 min-h-[4rem] font-medium whitespace-pre-line"
+                        className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-10 min-h-[4rem] font-medium whitespace-pre-line"
                     >
                         {text}
                         <motion.span

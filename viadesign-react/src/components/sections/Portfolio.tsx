@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { motion, AnimatePresence, type Variants } from 'framer-motion';
 import { graphicPortfolio, webPortfolio } from '../../data/projects';
 import ProjectCard from '../ui/ProjectCard';
-import { Sparkles, Code2 } from 'lucide-react';
+import BeforeAfter from '../ui/BeforeAfter';
+import { Sparkles, Code2, Layers } from 'lucide-react';
 
 const Portfolio = () => {
     const [filter, setFilter] = useState('all');
@@ -44,7 +45,7 @@ const Portfolio = () => {
     };
 
     return (
-        <section id="portfolio" className="py-20 bg-gray-50 overflow-hidden">
+        <section id="portfolio" className="py-20 bg-gray-50 dark:bg-slate-950 transition-colors duration-300 overflow-hidden">
             <div className="container mx-auto px-6">
 
                 {/* -- SECTION GRAPHIQUE -- */}
@@ -56,20 +57,20 @@ const Portfolio = () => {
                     variants={containerVariants}
                 >
                     <motion.div variants={titleVariants}>
-                        <span className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-bold mb-4">
+                        <span className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-bold mb-4">
                             <Sparkles size={16} className="animate-pulse" />
                             Mes Créations
                         </span>
                     </motion.div>
                     <motion.h2
                         variants={titleVariants}
-                        className="text-4xl md:text-5xl font-outfit font-bold text-gray-900 mb-4"
+                        className="text-4xl md:text-5xl font-outfit font-bold text-gray-900 dark:text-white mb-4"
                     >
                         Portfolio <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-500">Graphique</span>
                     </motion.h2>
                     <motion.p
                         variants={titleVariants}
-                        className="text-gray-600 max-w-2xl mx-auto text-lg"
+                        className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg"
                     >
                         Une sélection de mes meilleures créations visuelles. Affiches, flyers, branding et plus encore.
                     </motion.p>
@@ -94,7 +95,7 @@ const Portfolio = () => {
                             transition={{ delay: index * 0.05 }}
                             className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${filter === cat.key
                                 ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg shadow-blue-500/30'
-                                : 'bg-white text-gray-600 border border-gray-200 hover:border-blue-300 hover:text-blue-500 hover:shadow-md'
+                                : 'bg-white dark:bg-slate-900 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-slate-800 hover:border-blue-300 hover:text-blue-500 dark:hover:text-blue-400 hover:shadow-md'
                                 }`}
                         >
                             {cat.label}
@@ -129,6 +130,54 @@ const Portfolio = () => {
                 </motion.div>
 
 
+
+                {/* -- SECTION AVANT/APRÈS (PROCESS) -- */}
+                <motion.div
+                    className="mb-24 pt-16 border-t border-gray-100 dark:border-slate-800"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={containerVariants}
+                >
+                    <div className="text-center mb-12">
+                        <motion.div variants={titleVariants}>
+                            <span className="inline-flex items-center gap-2 px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full text-sm font-bold mb-4">
+                                <Layers size={16} />
+                                L'envers du décor
+                            </span>
+                        </motion.div>
+                        <motion.h2
+                            variants={titleVariants}
+                            className="text-4xl md:text-5xl font-outfit font-bold text-gray-900 dark:text-white mb-4"
+                        >
+                            Mon <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500">Process</span> Créatif
+                        </motion.h2>
+                        <motion.p
+                            variants={titleVariants}
+                            className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg"
+                        >
+                            Découvrez comment je transforme une idée brute en un résultat final professionnel. Glissez le curseur pour voir la différence.
+                        </motion.p>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                        <BeforeAfter
+                            beforeImage="/assets/graphic-2025-4.jpg"
+                            afterImage="/assets/graphic-2025-10.jpg"
+                            beforeLabel="Brouillon / Ancien"
+                            afterLabel="Version Finale"
+                            description="Refonte complète de l'identité visuelle d'un restaurant local."
+                        />
+                        <BeforeAfter
+                            beforeImage="/assets/graphic-2025-14.jpg"
+                            afterImage="/assets/graphic-2025-12.jpg"
+                            beforeLabel="Idée Initiale"
+                            afterLabel="Design Épuré"
+                            description="Optimisation de la lisibilité et de l'impact visuel pour un client business."
+                        />
+                    </div>
+                </motion.div>
+
                 {/* -- SECTION WEB -- */}
                 <motion.div
                     id="web"
@@ -148,7 +197,7 @@ const Portfolio = () => {
                     </motion.div>
                     <motion.h2
                         variants={titleVariants}
-                        className="text-4xl md:text-5xl font-outfit font-bold text-gray-900 mb-4"
+                        className="text-4xl md:text-5xl font-outfit font-bold text-gray-900 dark:text-white mb-4"
                     >
                         Réalisations <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-600">Web</span>
                     </motion.h2>

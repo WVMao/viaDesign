@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import type { Project } from '../../data/projects';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Monitor } from 'lucide-react';
 
 interface ProjectCardProps {
     project: Project;
@@ -11,15 +11,48 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 
     const CardContent = () => (
         <>
-            <div className="h-full w-full overflow-hidden">
-                <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-contain block transition-transform duration-500 hover:scale-110" // object-contain pour tout voir
-                    onError={(e) => {
-                        (e.target as HTMLImageElement).src = `https://via.placeholder.com/400x300?text=${encodeURIComponent(project.title)}`;
-                    }}
-                />
+            <div className="h-full w-full overflow-hidden relative">
+                {isWeb ? (
+                    <div className="w-full h-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center p-6 transition-colors">
+                        {/* Macbook-style mockup */}
+                        <div className="relative w-full aspect-[16/10] bg-slate-900 rounded-lg p-1 shadow-2xl overflow-hidden border-2 border-slate-700">
+                            <div className="absolute top-0 left-0 right-0 h-4 bg-slate-800 flex items-center px-2 gap-1">
+                                <div className="w-1.5 h-1.5 rounded-full bg-red-500"></div>
+                                <div className="w-1.5 h-1.5 rounded-full bg-yellow-500"></div>
+                                <div className="w-1.5 h-1.5 rounded-full bg-green-500"></div>
+                            </div>
+                            <img
+                                src={project.image}
+                                alt={project.title}
+                                className="w-full h-full object-cover mt-4 rounded-sm"
+                                onError={(e) => {
+                                    (e.target as HTMLImageElement).src = `https://via.placeholder.com/800x500?text=${encodeURIComponent(project.title)}`;
+                                }}
+                            />
+                            <div className="absolute bottom-2 right-2">
+                                <Monitor size={24} className="text-white/20" />
+                            </div>
+                        </div>
+                        {/* iPhone-style mockup overlay */}
+                        <div className="absolute -bottom-2 -right-2 w-16 aspect-[9/19] bg-slate-900 rounded-2xl p-0.5 shadow-xl border-2 border-slate-700 hidden sm:block">
+                            <div className="absolute top-1 left-1/2 -translate-x-1/2 w-4 h-1 bg-slate-800 rounded-full"></div>
+                            <img
+                                src={project.image}
+                                alt={project.title}
+                                className="w-full h-full object-cover rounded-[14px]"
+                            />
+                        </div>
+                    </div>
+                ) : (
+                    <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-contain block transition-transform duration-500 hover:scale-110"
+                        onError={(e) => {
+                            (e.target as HTMLImageElement).src = `https://via.placeholder.com/400x300?text=${encodeURIComponent(project.title)}`;
+                        }}
+                    />
+                )}
             </div>
 
             {/* Overlay avec texte blanc forcé */}
@@ -50,7 +83,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.4 }}
-            className="relative rounded-2xl overflow-hidden bg-white shadow-lg group h-[300px] sm:h-[350px]"
+            className="relative rounded-2xl overflow-hidden bg-white dark:bg-slate-900 shadow-lg dark:shadow-slate-900/50 group h-[300px] sm:h-[350px] border border-gray-100 dark:border-slate-800 transition-all duration-300"
         >
             <CardContent />
             {isWeb && project.link && (

@@ -54,7 +54,9 @@ const Contact = () => {
     };
 
     return (
-        <section id="contact" className="py-20 bg-gradient-to-br from-white via-blue-50/30 to-green-50/30 relative overflow-hidden">
+        <section id="contact" className="py-20 bg-gradient-to-br from-white via-blue-50/30 to-green-50/30 dark:from-slate-950 dark:via-slate-900 dark:to-emerald-950/20 relative overflow-hidden">
+            {/* Subtle Toghu-inspired motif */}
+            <div className="absolute top-0 right-0 w-full h-full opacity-[0.02] dark:opacity-[0.04] pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0l20 20-20 20L0 20z' fill='none' stroke='%23000' stroke-width='1'/%3E%3C/svg%3E")`, backgroundSize: '60px 60px' }}></div>
             {/* Background decorative elements */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <motion.div
@@ -88,7 +90,7 @@ const Contact = () => {
 
                     <motion.h2
                         variants={itemVariants}
-                        className="text-4xl md:text-5xl font-outfit font-bold text-gray-900 mb-6 leading-tight"
+                        className="text-4xl md:text-5xl font-outfit font-bold text-gray-900 dark:text-white mb-6 leading-tight"
                     >
                         Discutons de votre <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-500">
@@ -98,7 +100,7 @@ const Contact = () => {
 
                     <motion.p
                         variants={itemVariants}
-                        className="text-gray-600 mb-8 text-lg"
+                        className="text-gray-600 dark:text-gray-400 mb-8 text-lg"
                     >
                         Vous avez une idée ? Je suis là pour la concrétiser.
                         Que ce soit pour un design graphique percutant ou un site web complet.
@@ -149,7 +151,7 @@ const Contact = () => {
                 {/* Formulaire */}
                 <motion.form
                     onSubmit={handleSubmit}
-                    className="bg-white p-8 rounded-3xl shadow-2xl border border-gray-100 relative overflow-hidden"
+                    className="bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-2xl border border-gray-100 dark:border-slate-800 relative overflow-hidden"
                     initial={{ opacity: 0, x: 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
@@ -165,11 +167,11 @@ const Contact = () => {
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
                     >
-                        <label className="block text-gray-700 font-bold mb-2 text-sm">Votre Nom</label>
+                        <label className="block text-gray-700 dark:text-gray-300 font-bold mb-2 text-sm">Votre Nom</label>
                         <input
                             type="text"
                             required
-                            className="w-full px-4 py-3 rounded-xl bg-gray-50 border-2 border-gray-100 focus:border-blue-500 focus:bg-white focus:outline-none transition-all focus:shadow-lg focus:shadow-blue-500/10"
+                            className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-slate-800 border-2 border-gray-100 dark:border-slate-700 text-gray-900 dark:text-white focus:border-blue-500 focus:bg-white dark:focus:bg-slate-700 focus:outline-none transition-all focus:shadow-lg focus:shadow-blue-500/10"
                             placeholder="John Doe"
                             value={formData.name}
                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Heart } from 'lucide-react';
+import { Heart, Gift, Download } from 'lucide-react';
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -74,6 +74,31 @@ const Footer = () => {
                                 <span className="text-xl">{social.icon}</span>
                             </motion.a>
                         ))}
+                    </motion.div>
+
+                    {/* Free Resources Section */}
+                    <motion.div
+                        className="mb-12 p-8 bg-white/5 backdrop-blur rounded-3xl border border-white/10 max-w-2xl mx-auto"
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                    >
+                        <div className="flex items-center justify-center gap-3 mb-4">
+                            <Gift className="text-yellow-400" />
+                            <h3 className="text-xl font-bold">Ressources Gratuites</h3>
+                        </div>
+                        <p className="text-slate-400 mb-6 font-medium">
+                            Téléchargez mon guide exclusif : <br />
+                            <span className="text-white font-bold">"5 erreurs à éviter pour réussir son identité visuelle"</span>
+                        </p>
+                        <motion.a
+                            href="#"
+                            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-green-500 text-white rounded-full font-bold hover:shadow-lg hover:shadow-blue-500/20 transition-all"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                        >
+                            Recevoir le Pack Gratuit <Download size={18} />
+                        </motion.a>
                     </motion.div>
 
                     {/* Divider */}
