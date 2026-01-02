@@ -169,6 +169,11 @@ p {
     font-size: 1.1rem;
 }
 
+.text-dark-blue {
+    color: #001030 !important;
+    /* Bleu très foncé spécifique */
+}
+
 .container {
     max-width: 1400px;
     margin: 0 auto;
@@ -331,6 +336,37 @@ p {
     max-width: 800px;
     position: relative;
     z-index: 2;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+}
+
+@media (max-width: 900px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 3rem;
+    }
+
+    .hero-content {
+        margin: 0 auto;
+    }
+
+    .hero-content div {
+        /* Container des boutons */
+        justify-content: center;
+    }
+
+    .hero-image {
+        order: -1;
+        /* Image en premier sur mobile */
+        max-width: 80%;
+        margin: 0 auto;
+    }
 }
 
 .hero-badge {
