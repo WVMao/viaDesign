@@ -7,31 +7,36 @@ const Process = () => {
             icon: <Search className="w-8 h-8" />,
             title: "01. Découverte",
             description: "Analyse approfondie de vos besoins, de vos objectifs et de votre cible pour poser les bases solides de votre projet.",
-            iconStyles: "bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400"
+            iconStyles: "bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400",
+            image: "assets/process-step-1.png"
         },
         {
             icon: <Lightbulb className="w-8 h-8" />,
             title: "02. Stratégie",
             description: "Élaboration d'un concept unique, création de moodboards et définition de la direction artistique.",
-            iconStyles: "bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400"
+            iconStyles: "bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400",
+            image: "assets/process-step-2.png"
         },
         {
             icon: <PenTool className="w-8 h-8" />,
             title: "03. Design",
             description: "Donner vie aux idées à travers des visuels percutants ou des interfaces UI fluides et intuitives.",
-            iconStyles: "bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400"
+            iconStyles: "bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400",
+            image: "assets/process-step-3.png"
         },
         {
             icon: <Code2 className="w-8 h-8" />,
             title: "04. Réalisation",
             description: "Développement technique rigoureux avec une attention particulière aux détails et aux performances.",
-            iconStyles: "bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400"
+            iconStyles: "bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400",
+            image: "assets/process-step-4.png"
         },
         {
             icon: <Rocket className="w-8 h-8" />,
             title: "05. Lancement",
             description: "Mise en ligne, tests finaux et accompagnement pour assurer le succès de votre nouvelle identité.",
-            iconStyles: "bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400"
+            iconStyles: "bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400",
+            image: "assets/process-step-5.png"
         }
     ];
 
@@ -100,20 +105,31 @@ const Process = () => {
                             variants={stepVariants}
                             className="group relative"
                         >
-                            <div className="bg-gray-50 dark:bg-slate-900 p-8 rounded-3xl border border-gray-100 dark:border-slate-800 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 h-full flex flex-col">
-                                <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform ${step.iconStyles}`}>
-                                    {step.icon}
+                            <div className="bg-gray-50 dark:bg-slate-900 rounded-3xl border border-gray-100 dark:border-slate-800 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 h-full flex flex-col overflow-hidden">
+                                <div className="h-48 overflow-hidden relative group-hover:scale-105 transition-transform duration-500">
+                                    <div className={`absolute inset-0 opacity-20 ${step.iconStyles.split(' ')[0]}`}></div>
+                                    <img
+                                        src={step.image}
+                                        alt={step.title}
+                                        className="w-full h-full object-cover"
+                                    />
+                                    <div className="absolute top-4 right-4 bg-white/90 dark:bg-slate-900/90 p-2 rounded-xl backdrop-blur-sm shadow-sm">
+                                        {step.icon}
+                                    </div>
                                 </div>
-                                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                                    {step.title}
-                                </h3>
-                                <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-4">
-                                    {step.description}
-                                </p>
+
+                                <div className="p-8 flex-1 flex flex-col">
+                                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+                                        {step.title}
+                                    </h3>
+                                    <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-4">
+                                        {step.description}
+                                    </p>
+                                </div>
 
                                 {/* Connector line for desktop */}
                                 {index < steps.length - 1 && (
-                                    <div className="hidden lg:block absolute top-12 left-[100%] w-full h-[2px] bg-gradient-to-r from-gray-100 to-transparent dark:from-slate-800 z-[-1]" />
+                                    <div className="hidden lg:block absolute top-[18rem] left-[100%] w-full h-[2px] bg-gradient-to-r from-gray-100 to-transparent dark:from-slate-800 z-[-1]" />
                                 )}
                             </div>
                         </motion.div>
