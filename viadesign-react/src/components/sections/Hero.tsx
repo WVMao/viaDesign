@@ -159,7 +159,7 @@ const Hero = () => {
                             >
                                 <div className="absolute inset-0 bg-blue-500/10 mix-blend-overlay z-10" />
                                 <img
-                                    src="/assets/hero-portrait.png"
+                                    src="assets/hero-portrait.png"
                                     alt="Portrait ViaDesign"
                                     className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700"
                                 />

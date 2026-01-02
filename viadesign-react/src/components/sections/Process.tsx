@@ -155,7 +155,7 @@ const Process = () => {
                                 transition={{ type: "spring", stiffness: 300 }}
                             >
                                 <img
-                                    src="/assets/process-illustration.png"
+                                    src="assets/process-illustration.png"
                                     alt="Processus Créatif Illustration"
                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                 />
