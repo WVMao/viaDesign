@@ -160,7 +160,7 @@ const Hero = () => {
                             <motion.div
                                 animate={{ y: [0, -20, 0] }}
                                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] aspect-[4/5] bg-gradient-to-br from-white/10 to-white/5 dark:from-white/5 dark:to-transparent backdrop-blur-2xl rounded-3xl border border-white/20 shadow-2xl z-20 flex items-center justify-center overflow-hidden group"
+                                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] aspect-[4/5] bg-gradient-to-br from-white/10 to-white/5 dark:from-white/5 dark:to-transparent backdrop-blur-2xl rounded-3xl border border-white/20 shadow-2xl z-20 flex items-center justify-center overflow-hidden group will-change-transform"
                             >
                                 <div className="absolute inset-0 bg-green-500/20 mix-blend-color z-10" />
                                 <img
@@ -176,14 +176,14 @@ const Hero = () => {
                             <motion.div
                                 animate={{ y: [0, 30, 0], x: [0, -10, 0] }}
                                 transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                                className="absolute top-[10%] right-[5%] w-24 h-24 bg-gradient-to-br from-blue-400 to-indigo-600 rounded-full blur-sm opacity-80 z-10"
+                                className="absolute top-[10%] right-[5%] w-24 h-24 bg-gradient-to-br from-blue-400 to-indigo-600 rounded-full blur-sm opacity-80 z-10 will-change-transform"
                             />
 
                             {/* Floating Cube/Shape */}
                             <motion.div
                                 animate={{ rotate: 360 }}
                                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                                className="absolute bottom-[20%] left-[10%] w-32 h-32 border-2 border-green-400/30 rounded-3xl z-10 backdrop-blur-sm"
+                                className="absolute bottom-[20%] left-[10%] w-32 h-32 border-2 border-green-400/30 rounded-3xl z-10 backdrop-blur-sm will-change-transform"
                             />
 
                             {/* Glow behind */}

@@ -65,7 +65,7 @@ const Process = () => {
     };
 
     return (
-        <section id="process" className="py-24 bg-white dark:bg-slate-950 transition-colors duration-300 relative overflow-hidden">
+        <section id="process" className="py-24 bg-white dark:bg-slate-950 transition-colors duration-300 relative overflow-hidden content-visibility-auto">
             {/* Background elements */}
             <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-blue-50/50 dark:bg-blue-900/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
             <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-green-50/50 dark:bg-emerald-900/10 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/2" />
@@ -117,6 +117,8 @@ const Process = () => {
                                     <img
                                         src={step.image}
                                         alt={step.title}
+                                        loading="lazy"
+                                        decoding="async"
                                         className="w-full h-full object-cover"
                                     />
                                     <div className="absolute top-4 right-4 bg-white/90 dark:bg-slate-900/90 p-2 rounded-xl backdrop-blur-sm shadow-sm">
