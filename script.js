@@ -419,11 +419,9 @@ function loadWebPortfolio() {
         `;
 
         // Click handles
-        const overlay = portfolioItem.querySelector('.portfolio-overlay');
-        const viewTrigger = portfolioItem.querySelector('.view-image-trigger');
         const visitLink = portfolioItem.querySelector('.btn-visit-site');
 
-        // Prevent visit link from triggering parent click if we added one (not needed here but good practice)
+        // Prevent visit link from triggering parent click
         visitLink.addEventListener('click', (e) => e.stopPropagation());
 
         // View image when clicking the trigger or the image itself (excluding the visit button)

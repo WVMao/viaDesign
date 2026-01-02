@@ -268,45 +268,60 @@ img.lazy-error {
     margin-bottom: 0.5rem;
 }
 
-/* ============== WEB SPECIFIC EFFECTS ============== */
+/* ============== WEB SPECIFIC EFFECTS (WOW VERSION) ============== */
 .web-item {
     perspective: 1000px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    border: 1px solid rgba(0, 204, 136, 0.1);
+}
+
+.web-item::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: var(--gradient-primary);
+    z-index: -1;
+    border-radius: 22px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    filter: blur(10px);
 }
 
 .web-item:hover {
-    transform: translateY(-15px) scale(1.02) !important;
-    box-shadow: 0 40px 80px -15px rgba(0, 102, 255, 0.4) !important;
+    transform: translateY(-20px) scale(1.03) rotateX(5deg);
+    box-shadow: 0 40px 100px -20px rgba(0, 102, 255, 0.5);
+    border-color: var(--primary-green);
 }
 
-/* Forcer l'affichage de l'overlay au survol */
-.web-item:hover .portfolio-overlay {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-    visibility: visible !important;
+.web-item:hover::before {
+    opacity: 0.6;
 }
 
 .web-item .portfolio-image {
-    transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    /* Cover pour un look plus pro en web */
+    transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .web-item:hover .portfolio-image {
-    transform: scale(1.1);
+    transform: scale(1.1) translateY(-5%);
 }
 
-/* Animation flottante douce pour la section web */
 .web-item {
-    animation: floatCard 6s ease-in-out infinite;
+    animation: floatingWeb 4s ease-in-out infinite;
 }
 
-.web-item:nth-child(even) {
+.web-item:nth-child(2n) {
+    animation-delay: 1s;
+}
+
+.web-item:nth-child(3n) {
     animation-delay: 2s;
 }
 
-@keyframes floatCard {
+@keyframes floatingWeb {
 
     0%,
     100% {
@@ -314,7 +329,7 @@ img.lazy-error {
     }
 
     50% {
-        transform: translateY(-10px);
+        transform: translateY(-15px);
     }
 }
 
@@ -573,6 +588,13 @@ img.lazy-error {
     height: 100%;
     display: flex;
     flex-direction: column;
+    transition: all 0.4s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 102, 255, 0.1);
+    border-color: rgba(0, 102, 255, 0.2);
 }
 
 .testimonial-header {
